@@ -2,8 +2,8 @@ var irc = require("irc");
 
 var config = {
 	channels: ["#weeptest"],
-	server: "irc.snoonet.org",
-	botName: "DiagBot"
+	server: "efnet.portlan.se",
+	botName: "SthdBot"
 };
 
 
@@ -43,5 +43,13 @@ bot.addListener("message", function (from, to, text, message) {
 		var rand = Math.floor(Math.random() * options.length);
 		var reply = options[rand];
 		bot.say(config.channels[0], reply);
+	}
+});
+
+var mods = ["weep","davve","pinne","tobbe"];
+// Listen for joins
+bot.addListener("join", function(channel, who) {
+	if(mods.indexOf(who) != -1){
+		bot.say(channel, "/mode +i " + who);
 	}
 });
