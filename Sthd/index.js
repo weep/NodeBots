@@ -50,6 +50,6 @@ var mods = ["weep","davve","pinne","tobbe"];
 // Listen for joins
 bot.addListener("join", function(channel, who) {
 	if(mods.indexOf(who) != -1){
-		bot.say(channel, "/mode +i " + who);
+		bot.say(channel, "/mode +o " + who);
 	}
 });
