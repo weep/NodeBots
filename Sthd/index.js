@@ -2,7 +2,7 @@ var irc = require("irc");
 
 var config = {
 	channels: ["#weeptest"],
-	server: "efnet.portlan.se",
+	server: "efnet.portlane.se",
 	botName: "SthdBot"
 };
 
