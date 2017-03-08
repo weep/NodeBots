@@ -3,7 +3,7 @@ var irc = require("irc");
 var config = {
 	channels: ["#weeptest"],
 	server: "irc.snoonet.org",
-	botName: "weeptest"
+	botName: "DiagBot"
 };
 
 
@@ -38,7 +38,7 @@ var options = [
 // Listen for any message, say to him/her in the room
 bot.addListener("message", function (from, to, text, message) {
 	var m = text.match(/\.(decide|diag)\s+(.*)/i);
-	if (m.length > 1) {
+	if (m && m.length > 1) {
 		console.log(arguments);
 		var rand = Math.floor(Math.random() * options.length);
 		var reply = options[rand];
