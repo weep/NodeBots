@@ -1,11 +1,10 @@
-
-
 module.exports = (bot, message, args) => {
-    var http = require("http");
+    let http = require("http");
+    let channel = message.args[0];
     http.get("http://catfacts-api.appspot.com/api/facts", function (res) {
         res.on("data", function (data) {
-            var jsonObject = JSON.parse(data);
-            bot.say(message.args[0], jsonObject.facts[0]);
+            let jsonObject = JSON.parse(data);
+            bot.say(channel, jsonObject.facts[0]);
         })
     });
 }
