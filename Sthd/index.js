@@ -17,7 +17,7 @@ require("./Functions/AutoModerator")(bot);
 // Listen for any message, say to him/her in the room
 bot.addListener("message", function (from, to, text, message) {
 	try{
-		var match = text.match(/\.(\w+)\s*(.*)/i)
+		var match = text.match(/^\.(\w+)\s*(.*)/i)
 		if(match){
 			var handler = require.resolve("./Functions/" + match[1] + ".js");
 			require(handler)(bot, message, match[2]);
