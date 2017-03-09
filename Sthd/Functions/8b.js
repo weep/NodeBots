@@ -1,5 +1,5 @@
 
-var options = [
+const options = [
 	"It is certain",
 	"It is decidedly so",
 	"Without a doubt",
@@ -23,6 +23,6 @@ var options = [
 ]
 
 module.exports = (bot, message, args) => {
-    var random = Math.floor(Math.random() * options.length);
+    let random = Math.floor(Math.random() * options.length);
     bot.say(message.args[0], options[random]);
 }
