@@ -1,4 +1,4 @@
-var mods = ["weep", "davve", "pinne", "tobbe"];
+const mods = ["weep", "davve", "pinne", "tobbe"];
 
 module.exports = (bot) => {
     // Listen for joins
