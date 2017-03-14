@@ -30,6 +30,6 @@ bot.addListener("message", function (from, to, text, message) {
 	}
 });
 
-client.addListener('error', function(message) {
+bot.addListener('error', function(message) {
     console.log('error: ', message);
 });
